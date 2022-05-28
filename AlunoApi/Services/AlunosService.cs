@@ -32,7 +32,7 @@ namespace AlunoApi.Services
             IEnumerable<Aluno> alunos;
             if (!string.IsNullOrEmpty(nome))
             {
-                alunos = await _context.Alunos.Where(aluno => aluno.Nome.Contains(nome)).TolistAsync();
+                alunos = await _context.Alunos.Where(aluno => aluno.Nome.Contains(nome)).ToListAsync();
             } else
             {
                 alunos = await GetAlunos();

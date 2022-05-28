@@ -6,7 +6,7 @@ namespace AlunoApi.Services
 {
     public interface IAlunoService
     {
-        Task<IEnumerable<Aluno>> GetAluno();
+        Task<IEnumerable<Aluno>> GetAlunos();
         Task<Aluno> GetAluno(int id);
         Task<IEnumerable<Aluno>> GetAlunosByNome(string nome);
         Task CreateAluno(Aluno aluno);
