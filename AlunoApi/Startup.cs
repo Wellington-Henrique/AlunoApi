@@ -1,4 +1,5 @@
 using AlunoApi.Context;
+using AlunoApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,7 @@ namespace AlunoApi
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddScoped<IAlunoService, AlunosService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
