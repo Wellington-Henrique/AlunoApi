@@ -15,7 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-,
+
 namespace AlunoApi
 {
     public class Startup
@@ -39,6 +39,7 @@ namespace AlunoApi
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddScoped<IAuthenticate, AuthenticateService>();
             services.AddScoped<IAlunoService, AlunosService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
