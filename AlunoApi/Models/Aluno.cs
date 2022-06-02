@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AlunoApi.Controllers.Model
+namespace AlunoApi.Models
 {
     public class Aluno
     {

@@ -65,6 +65,33 @@ namespace AlunoApi
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AlunoApi", Version = "v1" });
+
+                // habilitar autorização usando swagger (JWT)
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "JWT Atuthorization header using the Beater scheme." +
+                    "\r\n\r\n Enter 'Bearer [space] and then your token in the text input below." +
+                    "\r\n\r\nExemple: \"Bearer 12345abcdef\"",
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[]{}
+                    }
+                });
             });
         }
 

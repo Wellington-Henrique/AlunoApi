@@ -1,4 +1,4 @@
-﻿using AlunoApi.Controllers.Model;
+﻿using AlunoApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;

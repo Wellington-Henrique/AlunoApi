@@ -1,4 +1,4 @@
-﻿using AlunoApi.Controllers.Model;
+﻿using AlunoApi.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
